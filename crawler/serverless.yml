@@ -1,0 +1,16 @@
+service: example-crawler
+
+provider:
+  name: aws
+  ecr:
+    images:
+      img:
+        path: ./
+        platform: linux/amd64
+
+functions:
+  crawl:
+    timeout: 30
+    memorySize: 128
+    image:
+      name: img
